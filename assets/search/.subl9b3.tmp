@@ -1,0 +1,19 @@
+$(function() {
+    $("form#state").on("change", function(e) {
+        var state = $("select#state", $(this)).val();
+        if (state != "#") {
+            $.ajax({
+                method: "POST",
+                url: "/index.php/Search/get_info_by_state",
+                data: {
+                    state: state
+                }
+            }).done(function(r) {
+                $(".search-section.state").animate({
+                    left: "-100%"
+                });
+                console.log(r);
+            });
+        }
+    });
+});

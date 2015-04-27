@@ -1,0 +1,21 @@
+.nav-bullets {
+    display: inline-block;
+    margin: 5px auto;
+}
+.nav-bullets .o {
+    border: 1px solid #000;
+    margin: 0.5em;
+    padding: 0;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}
+.nav-bullets .o.active {
+    background-color: #000;
+}
+.search-section.hidden {
+    visibility: hidden;
+}

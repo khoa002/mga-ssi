@@ -1,0 +1,40 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Synergy Systems Inc.</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/readable/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/search.css">
+</head>
+<body>
+	<div class="container">
+		<div>
+			<div style="text-align: center;">
+				<p class="nav-bullets"><span class="o active"></span><span class="o"></span><span class="o"></span></p>
+			</div>
+			<form class="form-horizontal">
+				<h3>Which state is your desired college or university located?</h3>
+				<div class="form-group">
+					<label class="col-sm-2 control-label" for="state">State</label>
+					<div class="col-sm-10">
+						<select id="state" name="state" class="form-control">
+							<option value="#" selected="selected">Please make a selection...</option>
+							<option value="all"> - ALL</option>
+							<?php foreach($states as $index => $value) { ?>
+								<option value="<?php echo $index; ?>"> - <?php echo $value; ?></option>
+							<?php } ?>
+						</select>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>

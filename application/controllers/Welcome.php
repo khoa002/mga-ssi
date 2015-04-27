@@ -20,6 +20,9 @@ class Welcome extends CI_Controller
      * @see http://codeigniter.com/user_guide/general/urls.html
      */
     public function index() {
+        $this->load->database();
+        // $query = $this->db->query('SELECT * FROM `school_info`');
+        // $data['result'] = $query->result_array();
         $this->load->view('welcome');
     }
 }
