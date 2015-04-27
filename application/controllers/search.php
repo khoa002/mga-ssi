@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class search extends CI_Controller {
+class Search extends CI_Controller {
     public function index() {
         $this->load->model("searchmodel");
         $data["states"] = $this->searchmodel->get_states();
