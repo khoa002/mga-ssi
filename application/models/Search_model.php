@@ -3,7 +3,7 @@ class Search_model extends CI_Model {
     function __construct() {
         parent::__construct();
         $this->load->database();
-        $this->load->model("common");
+        $this->load->model("Shared_model");
     }
 
     public function get_states(){
@@ -14,7 +14,7 @@ class Search_model extends CI_Model {
         foreach($result as $index => $value) {
             $count = $this->get_info_by_state($value["state"], "count");
             $total_count += $count;
-            $states[$value["state"]] = $this->common->get_state_name($value["state"]) . " ({$count} school" . ($count > 1 ? "s" : "") . ")";
+            $states[$value["state"]] = $this->Shared_model->get_state_name($value["state"]) . " ({$count} school" . ($count > 1 ? "s" : "") . ")";
         }
         $states["total"] = $total_count;
         if (isset($states["ZZ"])) unset($states["ZZ"]);

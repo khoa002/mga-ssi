@@ -1,5 +1,5 @@
 <?php
-class common extends CI_Model {
+class Shared_model extends CI_Model {
     function __construct() {
         parent::__construct();
         $this->states = array(
