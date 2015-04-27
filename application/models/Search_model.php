@@ -1,5 +1,5 @@
 <?php
-class Begin_model extends CI_Model {
+class Search_model extends CI_Model {
     function __construct() {
         parent::__construct();
         $this->load->database();
