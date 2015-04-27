@@ -34,7 +34,7 @@ $(function() {
         if (state == "#") return false;
         $.ajax({
             method: "POST",
-            url: "/index.php/Search/get_info_by_state",
+            url: "/index.php/search/get_info_by_state",
             data: {
                 state: state
             }
@@ -385,7 +385,7 @@ $(function() {
         // fill out the sports info screen
         $.ajax({
             type: "POST",
-            url: "/index.php/Search/get_sports"
+            url: "/index.php/search/get_sports"
         }).done(function(r) {
             var sports = $.parseJSON(r);
             $("form#sports .container.sports").html('');
@@ -422,7 +422,7 @@ $(function() {
         } else {
             $.ajax({
                 type: "POST",
-                url: "/index.php/Search/get_schools_sports_info"
+                url: "/index.php/search/get_schools_sports_info"
             }).done(function(r) {
                 school_sports_info = $.parseJSON(r);
                 sports_working_copy = [];
@@ -466,10 +466,10 @@ $(function() {
             $(".results table#results_table").html("<thead><tr><th>School Name</th><th>Location</th><th>Enrollment</th><th>Annual Tuition</th><th>Degrees Offered</th><th>Student-Faculty Ratio</th><th>Amenities</th><th>Sports</th></tr></thead><tbody></tbody>");
             $.when($.ajax({
                 type: "POST",
-                url: "/index.php/Search/get_schools_sports_info"
+                url: "/index.php/search/get_schools_sports_info"
             }), $.ajax({
                 type: "POST",
-                url: "/index.php/Search/get_sports",
+                url: "/index.php/search/get_sports",
                 data: {
                     key: "id"
                 }
