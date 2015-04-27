@@ -60,7 +60,7 @@
 	<div class="container">
 		<div class="jumbotron">
 			<h2>What is SSI's College Search 5000?</h2>
-			<p style="text-align: justify;">We aim to collect and maintain a searchable database of basic information on colleges and universities across the nation. By using this system, you are able to search for desired universities based on your specific criteria. Give it a try!</p>
+			<p style="text-align: justify;">testWe aim to collect and maintain a searchable database of basic information on colleges and universities across the nation. By using this system, you are able to search for desired universities based on your specific criteria. Give it a try!</p>
 			<p><a href="index.php/search/" type="button" class="btn btn-success btn-lg">Start searching!</a></p>
 		</div>
 	</div>
