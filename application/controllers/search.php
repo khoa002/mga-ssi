@@ -5,7 +5,7 @@ class Search extends CI_Controller {
         parent::__construct();
     }
     
-    public function index() {
+    public function start() {
         $this->load->model("Searchmodel");
         $data["states"] = $this->Searchmodel->get_states();
         $this->load->view('search', $data);
