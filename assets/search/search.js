@@ -148,7 +148,7 @@ $(function() {
         ticks.push(tuition_max);
         ticks_labels.push(numeral(tuition_max).format('$0,0'));
 
-        $("form#tuition input#tuition_slider").slider({
+        $("form#tuition #tuition_slider").slider({
             formatter: function(value) {
                 return numeral(value).format('$0,0') + " per year";
             },
