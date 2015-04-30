@@ -77,7 +77,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Tuition</label>
 					<div class="col-sm-10">
-						<input type="text" id="tuition_slider" style="width: 100%;">
+						<div id="tuition_slider"></div>
 					</div>
 				</div>
 			</form>
