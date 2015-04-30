@@ -135,18 +135,14 @@ $(function() {
 
         // generate tick marks
         var num_of_ticks = 5;
-        var increment = parseInt((tuition_max - tuition_min) / num_of_ticks);
+        var increment = ((tuition_max - tuition_min) / num_of_ticks);
         var ticks = [];
         var ticks_labels = [];
-        ticks.push(tuition_min);
-        ticks_labels.push(numeral(tuition_min).format('$0,0'));
-        for (var i = 1; i <= num_of_ticks - 1; i++) {
+        for (var i = 0; i < num_of_ticks + 1; i++) {
             var tick_value = tuition_min + (increment * i);
             ticks.push(tick_value);
             ticks_labels.push(numeral(tick_value).format('$0,0'));
         }
-        ticks.push(tuition_max);
-        ticks_labels.push(numeral(tuition_max).format('$0,0'));
 
         $("form#tuition #tuition_slider").slider({
             formatter: function(value) {
@@ -157,9 +153,11 @@ $(function() {
             value: tuition_max
         });
 
+        $("form#tuition .slider-tick-label").css("width", 100 / (num_of_ticks + 1) + "%");
+
         // event listener for slider
         tuition_working_copy = working_copy;
-        $("form#tuition input#tuition_slider").on("slide", function(slideEvt) {
+        $("form#tuition #tuition_slider").on("slide", function(slideEvt) {
             // console.log(slideEvt.value);
             tuition_working_copy = [];
             $.each(working_copy, function(i, v) {
@@ -193,21 +191,18 @@ $(function() {
             if (test_value < enrollment_min) enrollment_min = test_value;
             if (test_value > enrollment_max) enrollment_max = test_value;
         });
+
         var num_of_ticks = 5;
-        var increment = parseInt((enrollment_max - enrollment_min) / num_of_ticks);
+        var increment = ((enrollment_max - enrollment_min) / num_of_ticks);
         var ticks = [];
         var ticks_labels = [];
-        ticks.push(enrollment_min);
-        ticks_labels.push(numeral(enrollment_min).format('0,0'));
-        for (var i = 1; i <= num_of_ticks - 1; i++) {
+        for (var i = 0; i < num_of_ticks + 1; i++) {
             var tick_value = enrollment_min + (increment * i);
             ticks.push(tick_value);
             ticks_labels.push(numeral(tick_value).format('0,0'));
         }
-        ticks.push(enrollment_max);
-        ticks_labels.push(numeral(enrollment_max).format('0,0'));
 
-        $("form#enrollment input#enrollment_slider").slider({
+        $("form#enrollment #enrollment_slider").slider({
             formatter: function(value) {
                 return numeral(value).format('0,0') + " students";
             },
@@ -216,9 +211,11 @@ $(function() {
             value: enrollment_max
         });
 
+        $("form#enrollment .slider-tick-label").css("width", 100 / (num_of_ticks + 1) + "%");
+
         // event listener for slider
         enrollment_working_copy = tuition_working_copy;
-        $("form#enrollment input#enrollment_slider").on("slide", function(slideEvt) {
+        $("form#enrollment #enrollment_slider").on("slide", function(slideEvt) {
             // console.log(slideEvt.value);
             enrollment_working_copy = [];
             $.each(tuition_working_copy, function(i, v) {
@@ -251,21 +248,32 @@ $(function() {
             if (test_value < ratio_min) ratio_min = test_value;
             if (test_value > ratio_max) ratio_max = test_value;
         });
+
+        // var num_of_ticks = 5;
+        // var increment = parseInt((ratio_max - ratio_min) / num_of_ticks);
+        // var ticks = [];
+        // var ticks_labels = [];
+        // ticks.push(ratio_min);
+        // ticks_labels.push(numeral(ratio_min).format('0,0'));
+        // for (var i = 1; i <= num_of_ticks - 1; i++) {
+        //     var tick_value = ratio_min + (increment * i);
+        //     ticks.push(tick_value);
+        //     ticks_labels.push(numeral(tick_value).format('0,0'));
+        // }
+        // ticks.push(ratio_max);
+        // ticks_labels.push(numeral(ratio_max).format('0,0'));
+
         var num_of_ticks = 5;
-        var increment = parseInt((ratio_max - ratio_min) / num_of_ticks);
+        var increment = ((ratio_max - ratio_min) / num_of_ticks);
         var ticks = [];
         var ticks_labels = [];
-        ticks.push(ratio_min);
-        ticks_labels.push(numeral(ratio_min).format('0,0'));
-        for (var i = 1; i <= num_of_ticks - 1; i++) {
+        for (var i = 0; i < num_of_ticks + 1; i++) {
             var tick_value = ratio_min + (increment * i);
             ticks.push(tick_value);
             ticks_labels.push(numeral(tick_value).format('0,0'));
         }
-        ticks.push(ratio_max);
-        ticks_labels.push(numeral(ratio_max).format('0,0'));
 
-        $("form#ratio input#ratio_slider").slider({
+        $("form#ratio #ratio_slider").slider({
             formatter: function(value) {
                 return numeral(value).format('0,0') + " students per faculty";
             },
@@ -274,9 +282,11 @@ $(function() {
             value: ratio_max
         });
 
+        $("form#ratio .slider-tick-label").css("width", 100 / (num_of_ticks + 1) + "%");
+
         // event listener for slider
         ratio_working_copy = enrollment_working_copy;
-        $("form#ratio input#ratio_slider").on("slide", function(slideEvt) {
+        $("form#ratio #ratio_slider").on("slide", function(slideEvt) {
             // console.log(slideEvt.value);
             ratio_working_copy = [];
             $.each(enrollment_working_copy, function(i, v) {

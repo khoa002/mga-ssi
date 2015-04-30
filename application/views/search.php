@@ -93,7 +93,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Enrollment</label>
 					<div class="col-sm-10">
-						<input type="text" id="enrollment_slider" style="width: 100%;">
+						<div id="enrollment_slider" style="width: 100%;"></div>
 					</div>
 				</div>
 			</form>
@@ -109,7 +109,7 @@
 				<div class="form-group">
 					<label class="col-sm-2 control-label">Ratio</label>
 					<div class="col-sm-10">
-						<input type="text" id="ratio_slider" style="width: 100%;">
+						<div id="ratio_slider" style="width: 100%;"></div>
 					</div>
 				</div>
 			</form>
