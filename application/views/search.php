@@ -74,12 +74,7 @@
 			<p><a type="button" class="btn btn-default btn-sm back-to-degrees-selection">Back</a></p>
 			<form id="tuition" class="form-horizontal">
 				<h3>What is your desired annual tuition rate?</h3>
-				<div class="form-group">
-					<label class="col-sm-2 control-label">Tuition</label>
-					<div class="col-sm-10">
-						<div id="tuition_slider"></div>
-					</div>
-				</div>
+				<div id="tuition_slider"></div>
 			</form>
 			<p style="text-align: right;"><a type="button" class="btn btn-success btn-sm make-tuition-selection">Continue</a></p>
 		</div>
